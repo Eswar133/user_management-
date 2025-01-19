@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "40b4bc2b-3c55-4d10-a59f-73e1aa8bf757",
+		"name": "user management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29223603"
+	},
+	"item": [
+		{
+			"name": "admin/dashboard",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"admin@123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/admin/login"
+			},
+			"response": []
+		},
+		{
+			"name": "admin/dashboard",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "d8b94738673ed02211a44964f2538747741aaf19"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/admin/dashboard"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "d8b94738673ed02211a44964f2538747741aaf19"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "d8b94738673ed02211a44964f2538747741aaf19"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/auth/signup"
+			},
+			"response": [
+				{
+					"name": "login Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/auth/signup"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1749"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6d5-Q6B7EKASUFmaaTQiUtx6rMKhvK4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Jan 2025 10:20:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"UTF-8\" />\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n        <title>Signup</title>\n        <style>\r\n    /* Basic CSS for styling */\r\n    body {\r\n      font-family: Arial, sans-serif;\r\n      background-color: #f9f9f9;\r\n      margin: 0;\r\n      padding: 0;\r\n      display: flex;\r\n      justify-content: center;\r\n      align-items: center;\r\n      height: 100vh;\r\n    }\r\n    .container {\r\n      background: #fff;\r\n      padding: 20px;\r\n      border-radius: 10px;\r\n      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);\r\n      width: 400px;\r\n    }\r\n    form {\r\n      display: flex;\r\n      flex-direction: column;\r\n    }\r\n    input {\r\n      margin: 10px 0;\r\n      padding: 10px;\r\n      font-size: 16px;\r\n    }\r\n    button {\r\n      padding: 10px;\r\n      background: #007bff;\r\n      color: white;\r\n      border: none;\r\n      cursor: pointer;\r\n      border-radius: 5px;\r\n    }\r\n    button:hover {\r\n      background: #0056b3;\r\n    }\r\n    .switch {\r\n      margin-top: 10px;\r\n      text-align: center;\r\n    }\r\n  </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <h2>Create an Account</h2>\n            <form action=\"/auth/signup\" method=\"POST\" id=\"signupForm\">\n                <input type=\"text\" name=\"name\" placeholder=\"Name\" required />\n                <input type=\"email\" name=\"email\" placeholder=\"Email\" required />\n                <input type=\"password\" name=\"password\" placeholder=\"Password\" minlength=\"8\" required />\n                <input type=\"text\" name=\"phone\" placeholder=\"Phone Number\" maxlength=\"10\" required />\n                <button type=\"submit\">Signup</button>\n            </form>\n            <div class=\"switch\">\n                <p>Already have an account? \n                    <a href=\"/auth/login\">Login</a>\n                </p>\n            </div>\n        </div>\n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "signup",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "d8b94738673ed02211a44964f2538747741aaf19"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Eswara Reddy\",\r\n  \"email\": \"manikantaapadala358@gmail.com\",\r\n  \"password\": \"passworda123\",\r\n  \"phone\": \"9573621173\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/auth/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "d8b94738673ed02211a44964f2538747741aaf19"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"manikantaapadala358@gmail.com\",\r\n  \"password\": \"passworda123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/auth/login"
+			},
+			"response": []
+		}
+	]
+}
