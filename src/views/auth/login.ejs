@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <style>
+    /* Basic CSS for styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 400px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input {
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .switch {
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login to Your Account</h2>
+    <form action="/auth/login" method="POST" id="loginForm">
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" minlength="8" required />
+      <button type="submit">Login</button>
+    </form>
+    <div class="switch">
+      <p>Don't have an account? <a href="/auth/signup">Signup</a></p>
+    </div>
+  </div>
+</body>
+</html>

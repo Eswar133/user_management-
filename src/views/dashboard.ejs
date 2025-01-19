@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background: #007bff;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .container {
+      padding: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    input {
+      padding: 10px;
+      width: 100%;
+      margin-top: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div>Welcome, <%= user.name %></div>
+    <div>
+      <a href="/auth/login">Login</a>
+      <a href="/auth/signup">Signup</a>
+      <a href="/auth/logout">Logout</a>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div class="container">
+    <h2>Your Details</h2>
+    <p><strong>Name:</strong> <%= user.name %></p>
+    <p><strong>Email:</strong> <%= user.email %></p>
+    <p><strong>Phone:</strong> <%= user.phone %></p>
+
+    <!-- Update Details -->
+    <h3>Update Your Details</h3>
+    <form action="/user/update" method="POST">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%= user.name %>" required />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" id="phone" value="<%= user.phone %>" required />
+      </div>
+      <button type="submit">Update</button>
+    </form>
+
+    <!-- Deactivate Account -->
+    <h3>Deactivate Account</h3>
+    <form action="/user/deactivate" method="POST">
+      <button type="submit" style="background: red;">Deactivate</button>
+    </form>
+  </div>
+</body>
+</html>
+<script>
+    document.querySelector("form[action='/user/update']").addEventListener("submit", function (e) {
+      const phone = document.getElementById("phone").value;
+      if (!/^\d{10}$/.test(phone)) {
+        e.preventDefault();
+        alert("Please enter a valid 10-digit phone number.");
+      }
+    });
+  </script>
+  
