@@ -85,7 +85,7 @@ user-management/
 
 1. **Clone the Repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Eswar133/user_management-.git
    cd user-management
    ```
 
